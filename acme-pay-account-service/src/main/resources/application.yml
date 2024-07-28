@@ -1,0 +1,50 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: account-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: postgres
+    username: postgres
+    url : jdbc:postgresql://localhost:5433/account-service
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+#  redis:
+#    host: localhost
+#    port: '6379'
+#    password: 'redis'
+#
+#  spring:
+#    kafka:
+#      bootstrap-servers: localhost:9092 # Endereço do servidor Kafka
+#      consumer:
+#        group-id: transfer # ID do grupo do consumidor
+#        auto-offset-reset: earliest # Pode ser earliest ou latest
+#      producer:
+#        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#        value-serializer: org.apache.kafka.common.serialization.JsonSerializer
+
+# swagger-ui
+springdoc:
+  default-produces-media-type: application/json
+  default-consumes-media-type: application/json
+  api-docs:
+    enabled: true
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#    instance:
+#      preferIpAddress: true
+
+base-url:
+  customer: localhost:8082/api/v1/customers
